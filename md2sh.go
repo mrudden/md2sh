@@ -79,7 +79,8 @@ func main() {
 				}
 			} else {
 				if headerFound {
-					fmt.Println(")\n")
+					fmt.Println(")")
+					fmt.Println("# Add logic to process this array\n")
 				}
 				
 				headerFound = false
