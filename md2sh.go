@@ -44,7 +44,8 @@ func main() {
 				
 				// if there's a match, print the part of the string from the backticks
 				if stringMatch {
-					fmt.Println(re.FindString(line))
+					codePrint := re.FindString(line)
+					fmt.Println(codePrint[1:len(codePrint)-1])
 				}
 
 				// Remove any parenthesis and spaces to not break list

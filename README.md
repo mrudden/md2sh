@@ -2,7 +2,7 @@
 Convert markdown lists to shell script arrays
 
 ## How it works
-Reads every bullet point into an array following a header formatted with `###`
+Reads every bullet point into an array following a header formatted with "###"
 
 ## To Run
 Run `go run md2sh.go README.md` in your terminal
