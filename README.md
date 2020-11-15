@@ -1,13 +1,14 @@
 # md2sh
-Convert markdown lists to shell script arrays
+Convert markdown README.md files into bootstraps for shell scripts. Make self-documenting shell scripts easier to build and work with.
 
 ## How it works
 Reads every bullet point into an array following a header formatted with "###"
+If you have code denoted by backticks, it should appear literally transcribed.
 
 ## To Run
 Run `go run md2sh.go README.md` in your terminal
 
-If you have `code` denoted by backticks, it should appear literally transcribed.
+## Test section
 
 ### Test
 * Test 1
