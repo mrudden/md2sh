@@ -6,14 +6,9 @@ import (
 	"bufio"
 	"log"
 	"strings"
+	"regexp"
 )
 
-//contents := []{"a", "b", "c"}
-
-//type List struct {
-//	title string
-//	contents []contents
-//}
 
 func main() {
 	fmt.Println("~~~ Here are your lists! ~~~\n")
@@ -28,6 +23,7 @@ func main() {
 
 	// Variable for formatting output
 	headerFound := false
+	re := regexp.MustCompile(`\x60(.*)\x60`)
 
 	// Scanner will read the file line by line
 	scanner := bufio.NewScanner(file)
@@ -36,10 +32,20 @@ func main() {
 			line := scanner.Text()
 			//fmt.Println(line)
 
-			//fmt.Println(strings.HasPrefix(scanner.Text(), "###"))
-
 			//skip any lines with length of 0
 			if len(line) > 0 {
+
+				// If there's any backticks, transpose directly to output
+				// Try to match
+				stringMatch := re.MatchString(line)
+
+				// Test regex match
+				//fmt.Println(stringMatch)
+				
+				// if there's a match, print the part of the string from the backticks
+				if stringMatch {
+					fmt.Println(re.FindString(line))
+				}
 
 				// Remove any parenthesis and spaces to not break list
 				line = strings.Replace(line, "(", "", -1)
@@ -68,10 +74,7 @@ func main() {
 						line = strings.Replace(line, " ", "-", -1)
 
 						fmt.Println("  " + line[2:])
-					} //else {
-						//fmt.Println(")\n")
-						//headerFound = false
-					//}
+					} 
 				}
 			} else {
 				if headerFound {
