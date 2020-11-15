@@ -11,7 +11,8 @@ import (
 
 
 func main() {
-	fmt.Println("~~~ Here are your lists! ~~~\n")
+	fmt.Println("~~~ Here are your lists! ~~~")
+	fmt.Println()
 
 	inputFile := os.Args[1]
 		
@@ -80,7 +81,8 @@ func main() {
 			} else {
 				if headerFound {
 					fmt.Println(")")
-					fmt.Println("# Add logic to process this array\n")
+					fmt.Println("# Add logic to process this array")
+					fmt.Println()
 				}
 				
 				headerFound = false
