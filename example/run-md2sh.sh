@@ -6,8 +6,10 @@
 # ## To Run
 # After running `git clone [THIS_REPOSITORY]`, you can run the following commands to test md2sh out and reproduce this file:
 git clone [THIS_REPOSITORY]
+
 # `cd example`
 cd example
+
 # `go run ../md2sh.go -o -s`
 go run ../md2sh.go -o -s
 

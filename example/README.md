@@ -3,7 +3,9 @@ This is an example file, to be compared against the output from the script in th
 
 ## To Run
 After running `git clone [THIS_REPOSITORY]`, you can run the following commands to test md2sh out and reproduce this file:
+
 `cd example`
+
 `go run ../md2sh.go -o -s`
 
 ## Lists of things
