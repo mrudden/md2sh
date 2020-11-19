@@ -150,7 +150,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		outFile.WriteString("#!/bin/sh")
+		outFile.WriteString("#!/bin/sh\n\n")
 		for _, outputLine := range output {
 			outFile.WriteString(outputLine + "\n")
 		}
