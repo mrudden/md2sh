@@ -12,6 +12,7 @@ Any other lines will be transposed with a "#" in front as a comment.
 
 ## To Run
 Run `go run md2sh.go -f [INPUTFILENAME.md]` in your terminal, substituting INPUTFILENAME.md with your path and filename
+
 If no filename is provided, it will default to "README.md"
 
 ### Flags
