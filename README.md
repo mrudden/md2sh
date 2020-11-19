@@ -3,7 +3,8 @@ Convert markdown README.md files into a bootstrapped shell script. Make self-doc
 
 ## How it works
 Reads every bullet point into an array following a header formatted with "###".
-If you have any code on a line denoted by backticks, it should appear literally transcribed, with the original line commented out above it.
+If you have any code on one line denoted by backticks, it should appear literally transcribed, with the original line commented out above it.
+If you have a code block denoted by either three backticks or three tildes, it will transcribe the block with comments to note the beginning and end of the code block.
 Any other lines will be transposed with a "#" in front as a comment.
 
 ## To Run
