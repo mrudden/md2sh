@@ -1,3 +1,6 @@
+// md2sh.go
+// Copyright 2020 Michael Rudden
+
 package main
 
 import (
@@ -9,7 +12,6 @@ import (
 	"strings"
 	"regexp"
 )
-
 
 func main() {
 	//fmt.Println("~~~ Here is your output! ~~~")
@@ -59,6 +61,9 @@ func main() {
 	// Regex for backticks with anything between them"``"
 	re := regexp.MustCompile(`\x60(.*)\x60`)
 
+	// Variable for detecting code blocks
+	codeBlockHeaderFound := false
+
 	// Scanner will read the file line by line
 	scanner := bufio.NewScanner(inFile)
 	for scanner.Scan() {
@@ -69,10 +74,30 @@ func main() {
 		// Boolean to see if line matches any rules below
 		matchFound := false
 
-		// If there's any backticks, transpose directly to output
-		// Try to match
-		stringMatch := re.MatchString(line)
+		// Look for code blocks
+		if !matchFound && !codeBlockHeaderFound {
+			if line == "```" || line == "~~~" {
+				//fmt.Println("Code block found!")
+				line = "# BEGIN Code Block"
+				codeBlockHeaderFound = true
+				matchFound = true				
+			}
+		} else if !matchFound && codeBlockHeaderFound {
+			// If we haven't matched this line, but we're in a code block, line should print literally. If it's the end of the code block, we need to set the variable to false to end it.
+			if line == "```" || line == "~~~" {
+				codeBlockHeaderFound = false
+				line = "# END Code Block"
+			}	
+			matchFound = true
+		}
 
+		// If there's any backticks around content in a single line, transpose directly to output
+		// Try to match
+		stringMatch := false
+		if !matchFound {
+			stringMatch = re.MatchString(line)
+		}
+		
 		// Test regex match
 		//fmt.Println(stringMatch)
 		
