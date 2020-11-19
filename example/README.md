@@ -14,6 +14,9 @@ What type of bullets you use in lists shouldn't matter. The four arrays below sh
 * Test 2
 * Test 3
 
+After the first array, let's look at a sample code one-liner that could be used to parse an array:
+`for i in "${ARRAY_NAME_HERE}"; do echo $i; done`
+
 There should be one total test array in the output above this
 
 ### Test List 2
@@ -37,7 +40,11 @@ There should be three total test arrays in the output above this
 
 There should be four total test arrays in the output above this
 
-After the fourth array, let's look at some sample code that could be used to parse an array:
-`for i in "${ARRAY_NAME_HERE}"; do echo $i; done`
+After the fourth array, let's look at a sample code block that could be used to parse an array:
+```
+for i in "${ARRAY_NAME_HERE}"
+  do echo $i;
+done
+```
 
 This should be the end of the output. We could `echo "Script complete! Exiting."` here.

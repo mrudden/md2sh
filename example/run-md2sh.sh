@@ -21,6 +21,10 @@ TEST_LIST_1=(
 )
 #TODO: Add logic to process this array
 
+# After the first array, let's look at a sample code one-liner that could be used to parse an array:
+# `for i in "${ARRAY_NAME_HERE}"; do echo $i; done`
+for i in "${ARRAY_NAME_HERE}"; do echo $i; done
+
 # There should be one total test array in the output above this
 
 TEST_LIST_2=(
@@ -50,9 +54,12 @@ TEST_LIST_4_THE_LAST_ONE=(
 
 # There should be four total test arrays in the output above this
 
-# After the fourth array, let's look at some sample code that could be used to parse an array:
-# `for i in "${ARRAY_NAME_HERE}"; do echo $i; done`
-for i in "${ARRAY_NAME_HERE}"; do echo $i; done
+# After the fourth array, let's look at a sample code block that could be used to parse an array:
+# BEGIN Code Block
+for i in "${ARRAY_NAME_HERE}"
+  do echo $i;
+done
+# END Code Block
 
 # This should be the end of the output. We could `echo "Script complete! Exiting."` here.
 echo "Script complete! Exiting."
