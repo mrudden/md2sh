@@ -1,5 +1,5 @@
 # md2sh
-Convert markdown README.md files into a skeleton for bootstrapping a shell script. Make self-documenting shell scripts easier to build and work with.
+Convert markdown README.md files into a bootstrapped shell script. Make self-documenting shell scripts easier to build and work with.
 
 ## How it works
 Reads every bullet point into an array following a header formatted with "###".
